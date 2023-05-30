@@ -2,15 +2,15 @@ package org.example;
 
 import java.util.Scanner;
 
-
 public class Main {
     public static void main(String[] args) throws Exception {
-
-        calc("VII+X+X");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ожидается ввод");
+        String result = scanner.nextLine();
+        calc(result);
 
     }
-
-    public static void calc(String exp) throws Exception {
+    public static String calc(String exp) throws Exception {
 
         Converter converter = new Converter();
         String[] actions = {"+", "-", "/", "*"};
@@ -69,7 +69,7 @@ public class Main {
         } else {
             throw new Exception("incorrect input");
         }
-
+        return "";
     }
 
 }
